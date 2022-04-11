@@ -9,8 +9,6 @@ import { signIn, signUp } from '../../actions/auth';
 
 const Auth = () => {
   const initialFormState = {
-    firstName: '',
-    lastName: '',
     email: '',
     password: '',
   };
@@ -24,24 +22,12 @@ const Auth = () => {
     e.preventDefault();
     setformData(formData);
     console.log(formData);
-    dispatch(signUp(formData, navigate));
+    dispatch(signIn(formData, navigate));
   };
   return (
     <div className='maindiv'>
       <div>
         <form className='formdiv'>
-          <input
-            type='text'
-            name='firstName'
-            placeholder='Enter First Name'
-            onChange={handleChange}
-          />
-          <input
-            type='text'
-            name='lastName'
-            placeholder='Enter last Name '
-            onChange={handleChange}
-          />
           <input
             type='email'
             name='email'
@@ -57,7 +43,7 @@ const Auth = () => {
           <input type='submit' value='submit' onClick={handleSubmit} />
         </form>
         <span>
-          Have an account <a href='/signin'>signin</a>
+          Don't have an account <a href='/signup'>signup</a>
         </span>
       </div>
     </div>

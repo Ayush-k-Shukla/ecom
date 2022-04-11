@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
   category: { type: String, required: true },
   Price: { type: Number, required: true },
   id: { type: String },
-  selectedFile: { type: String },
+  selectedFile: { type: String }, //for storing 64base image of product
   listedBy: { type: String },
   description: { type: String },
   listedAt: {
