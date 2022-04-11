@@ -35,6 +35,9 @@ const Home = () => {
       {admin ? (
         <>
           <h1>{`user ${admin.result.name} is currently logged in`}</h1>
+          <h3>
+            Now you can add the product <a href='/add'>here</a>
+          </h3>
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
@@ -42,9 +45,7 @@ const Home = () => {
       )}
 
       <div className='products-container'>
-        <Product />
-        <Product />
-        <Product />
+        <h5>Product to be listed here</h5>
       </div>
     </div>
   );

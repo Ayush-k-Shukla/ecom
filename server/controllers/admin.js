@@ -36,9 +36,8 @@ export const signIn = async (req, res) => {
 export const signUp = async (req, res) => {
   console.log(req.body);
   const { email, password, firstName, lastName } = req.body;
-
   try {
-    const isAdmin = await Admin.findOne({ email: email });
+    const isAdmin = await Admin.findOne({ email });
     if (isAdmin) {
       res.status(400).json('Email is already taken');
     }
@@ -61,6 +60,5 @@ export const signUp = async (req, res) => {
     res.status(201).json({ result: admin, token });
   } catch (error) {
     res.status(500).json({ message: 'something went wrong' });
-    console.log(error);
   }
 };

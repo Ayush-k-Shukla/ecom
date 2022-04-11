@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import AuthSignUp from './components/Auth/AuthSignup';
 import AuthLogin from './components/Auth/AuthLogin';
 import './index.css';
+import AddProd from './components/Auth/AddProd';
 
 function App() {
   const admin = JSON.parse(localStorage.getItem('admin'));
@@ -22,6 +23,11 @@ function App() {
             path='/signin'
             exact
             element={admin ? <Navigate to='/' /> : <AuthLogin />}
+          />
+          <Route
+            path='/add'
+            exact
+            element={admin ? <AddProd /> : <Navigate to='/' />}
           />
         </Routes>
       </BrowserRouter>
